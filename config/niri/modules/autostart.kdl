@@ -1,0 +1,22 @@
+// ============================================================================
+//  Автозапуск
+//  spawn-at-startup     — команда + аргументы (без shell)
+//  spawn-sh-at-startup  — команда через sh -c (переменные, пайпы)
+// ============================================================================
+
+// Бар и уведомления.
+spawn-at-startup "waybar"
+spawn-at-startup "mako"
+
+// Экранное OSD для громкости/яркости.
+spawn-at-startup "swayosd-server"
+
+// Обои на оба монитора.
+spawn-sh-at-startup "sleep 0.6; exec ~/.local/bin/wallpaper.sh"
+
+// История буфера обмена (текст + картинки).
+spawn-sh-at-startup "wl-paste --type text --watch cliphist store"
+spawn-sh-at-startup "wl-paste --type image --watch cliphist store"
+
+// Блокировка и гашение экрана при простое.
+spawn-sh-at-startup "swayidle -w timeout 300 'swaylock -f' timeout 420 'niri msg action power-off-monitors' resume 'niri msg action power-on-monitors' before-sleep 'swaylock -f'"

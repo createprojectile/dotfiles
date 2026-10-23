@@ -1,0 +1,39 @@
+// ============================================================================
+//  Анимации
+//  Сдержанные, быстрые, с мягким «expo»-выходом.
+// ============================================================================
+
+animations {
+    window-open {
+        duration-ms 220
+        curve "ease-out-expo"
+    }
+
+    window-close {
+        duration-ms 160
+        curve "ease-out-quad"
+    }
+
+    window-movement {
+        duration-ms 320
+        curve "ease-out-expo"
+    }
+
+    window-resize {
+        duration-ms 220
+        curve "ease-out-expo"
+    }
+
+    workspace-switch {
+        duration-ms 420
+        curve "ease-out-expo"
+    }
+
+    horizontal-view-movement {
+        duration-ms 420
+        curve "ease-out-expo"
+    }
+
+    // Ускорять/замедлять всё разом: 1.0 — как задано выше.
+    // slowdown 1.0
+}

@@ -1,0 +1,42 @@
+# ============================================================================
+#  swaylock · Ayu Dark
+# ============================================================================
+
+color=0a0e14ff
+inside-color=0a0e14cc
+inside-clear-color=0a0e14cc
+inside-caps-lock-color=0a0e14cc
+inside-ver-color=0a0e14cc
+inside-wrong-color=0a0e14cc
+
+ring-color=1f2630ff
+ring-clear-color=8a9199ff
+ring-caps-lock-color=e6b450ff
+ring-ver-color=59c2ffff
+ring-wrong-color=f07178ff
+
+key-hl-color=59c2ffff
+bs-hl-color=f07178ff
+caps-lock-key-hl-color=e6b450ff
+caps-lock-bs-hl-color=f07178ff
+separator-color=00000000
+
+text-color=bfbdb6ff
+text-clear-color=bfbdb6ff
+text-caps-lock-color=e6b450ff
+text-ver-color=bfbdb6ff
+text-wrong-color=f07178ff
+
+line-color=00000000
+line-clear-color=00000000
+line-caps-lock-color=00000000
+line-ver-color=00000000
+line-wrong-color=00000000
+
+font="JetBrainsMono Nerd Font"
+font-size=14
+indicator-radius=140
+indicator-thickness=6
+indicator-idle-visible=yes
+show-failed-attempts=yes
+fade-in=0.2

@@ -1,0 +1,59 @@
+// ============================================================================
+//  Правила окон
+//  https://niri-wm.github.io/niri/Configuration:-Window-Rules
+// ============================================================================
+
+// --- Плавающие окна ---------------------------------------------------------
+
+// Диалоги выбора файла и мелкие утилиты открываются «поверх», а не в тайле.
+window-rule {
+    match app-id=r#"^(xdg-desktop-portal-gtk|xdg-desktop-portal-gnome|org\.gtk\.FileChooser)$"#
+    open-floating true
+}
+
+window-rule {
+    match app-id=r#"^(pavucontrol|org\.pulseaudio\.pavucontrol|nm-connection-editor|blueman-manager|blueman-adapters)$"#
+    open-floating true
+    default-column-width { proportion 0.5; }
+}
+
+window-rule {
+    match app-id=r#"^org\.gnome\.Calculator$"#
+    open-floating true
+    default-column-width { fixed 420; }
+}
+
+// Картинка/видео по центру, а не на пол-экрана.
+window-rule {
+    match app-id=r#"^(imv|swayimg|mpv|org\.gnome\.ShowTime)$"#
+    open-floating true
+}
+
+// Firefox Picture-in-Picture — всегда плавающий.
+window-rule {
+    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    open-floating true
+}
+
+// WezTerm требует пустую начальную ширину (из дефолтного конфига niri).
+window-rule {
+    match app-id=r#"^org\.wezfurlong\.wezterm$"#
+    default-column-width {}
+}
+
+// --- Приватность ------------------------------------------------------------
+
+// Менеджеры паролей не попадают на скриншоты и в запись экрана.
+window-rule {
+    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
+    match app-id=r#"^org\.gnome\.World\.Secrets$"#
+    block-out-from "screen-capture"
+}
+
+// --- Единый стиль -----------------------------------------------------------
+
+// Скругления и корректная тень для всех окон.
+window-rule {
+    geometry-corner-radius 12
+    clip-to-geometry true
+}

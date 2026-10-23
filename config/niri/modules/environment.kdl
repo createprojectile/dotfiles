@@ -1,0 +1,39 @@
+// ============================================================================
+//  Окружение сессии
+// ============================================================================
+
+environment {
+    // --- Wayland / toolkit -------------------------------------------------
+    QT_QPA_PLATFORM "wayland"
+    QT_QPA_PLATFORMTHEME "qt6ct"
+    QT_WAYLAND_DISABLE_WINDOWDECORATION "1"
+    GDK_BACKEND "wayland,x11"
+    MOZ_ENABLE_WAYLAND "1"
+    ELECTRON_OZONE_PLATFORM_HINT "auto"
+    XDG_SESSION_TYPE "wayland"
+    XDG_CURRENT_DESKTOP "niri"
+    XDG_SESSION_DESKTOP "niri"
+
+    // --- Курсор ------------------------------------------------------------
+    XCURSOR_THEME "Bibata-Modern-Ice"
+    XCURSOR_SIZE "24"
+
+    // --- NVIDIA (GTX 1050 Ti, драйвер 580xx) -------------------------------
+    // Аппаратное декодирование видео и корректный GBM-бэкенд.
+    LIBVA_DRIVER_NAME "nvidia"
+    NVD_BACKEND "direct"
+    GBM_BACKEND "nvidia-drm"
+    __GLX_VENDOR_LIBRARY_NAME "nvidia"
+}
+
+// Клиенты не рисуют свои заголовки/тени — niri рисует рамку сам.
+// После изменения нужно перезапустить приложения.
+prefer-no-csd
+
+// Не показывать подсказку с горячими клавишами при старте.
+hotkey-overlay {
+    skip-at-startup
+}
+
+// Куда сохранять скриншоты из встроенного UI niri.
+screenshot-path "~/Pictures/Screenshots/Shot %Y-%m-%d %H-%M-%S.png"

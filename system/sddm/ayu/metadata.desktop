@@ -1,0 +1,10 @@
+[SddmGreeterTheme]
+Name=Ayu Dark
+Description=Минимальная тема экрана входа в палитре Ayu Dark
+Type=sddm-theme
+MainScript=Main.qml
+ConfigFile=theme.conf
+Theme-Id=ayu
+Theme-API=2.0
+QtVersion=6
+Version=1.0

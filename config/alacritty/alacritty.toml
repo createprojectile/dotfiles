@@ -1,0 +1,105 @@
+# ============================================================================
+#  Alacritty · Ayu Dark
+# ============================================================================
+
+[window]
+padding = { x = 14, y = 12 }
+dynamic_title = true
+decorations = "none"
+opacity = 0.96
+startup_mode = "Windowed"
+
+[font]
+size = 11
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+style = "Regular"
+
+[font.bold]
+family = "JetBrainsMono Nerd Font"
+style = "Bold"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font"
+style = "Italic"
+
+[font.bold_italic]
+family = "JetBrainsMono Nerd Font"
+style = "Bold Italic"
+
+[colors.primary]
+background = "#0a0e14"
+foreground = "#bfbdb6"
+dim_foreground = "#565b66"
+bright_foreground = "#e6e1cf"
+
+[colors.cursor]
+text = "#0a0e14"
+cursor = "#59c2ff"
+
+[colors.vi_mode_cursor]
+text = "#0a0e14"
+cursor = "#d2a6ff"
+
+[colors.search.matches]
+foreground = "#0a0e14"
+background = "#ffb454"
+
+[colors.search.focused_match]
+foreground = "#0a0e14"
+background = "#aad94c"
+
+[colors.footer_bar]
+foreground = "#0a0e14"
+background = "#8a9199"
+
+[colors.hints.start]
+foreground = "#0a0e14"
+background = "#e6b450"
+
+[colors.hints.end]
+foreground = "#0a0e14"
+background = "#8a9199"
+
+[colors.selection]
+text = "#0a0e14"
+background = "#59c2ff"
+
+[colors.normal]
+black = "#11151c"
+red = "#f07178"
+green = "#aad94c"
+yellow = "#e6b450"
+blue = "#59c2ff"
+magenta = "#d2a6ff"
+cyan = "#95e6cb"
+white = "#bfbdb6"
+
+[colors.bright]
+black = "#565b66"
+red = "#ff8f96"
+green = "#c2e06b"
+yellow = "#ffcc66"
+blue = "#7fd0ff"
+magenta = "#e0bbff"
+cyan = "#b3f0e0"
+white = "#e6e1cf"
+
+[cursor]
+style = { shape = "Beam", blinking = "On" }
+blink_interval = 600
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[mouse]
+hide_when_typing = true
+
+[selection]
+save_to_clipboard = true
+
+[bell]
+animation = "EaseOutExpo"
+duration = 100

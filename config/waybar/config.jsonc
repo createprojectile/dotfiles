@@ -1,0 +1,142 @@
+// ============================================================================
+//  Waybar · Ayu Dark
+//  Солидная полоса сверху, высота 34px.
+//  Иконки — Nerd Font (JetBrainsMono Nerd Font).
+// ============================================================================
+{
+  "layer": "top",
+  "position": "top",
+  "height": 34,
+  "spacing": 0,
+  "fixed-center": true,
+  "reload_style_on_change": true,
+
+  "modules-left": [
+    "custom/launcher",
+    "niri/workspaces",
+    "niri/window"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "tray",
+    "mpris",
+    "network",
+    "pulseaudio",
+    "cpu",
+    "memory",
+    "custom/power"
+  ],
+
+  // --- Лаунчер --------------------------------------------------------------
+  "custom/launcher": {
+    "format": "◆",
+    "tooltip": false,
+    "on-click": "fuzzel",
+    "on-click-right": "~/.local/bin/power-menu.sh"
+  },
+
+  // --- Рабочие пространства niri -------------------------------------------
+  "niri/workspaces": {
+    "format": "{index}",
+    "disable-scroll": false,
+    "all-outputs": false
+  },
+
+  // --- Заголовок активного окна --------------------------------------------
+  "niri/window": {
+    "format": "{title}",
+    "max-length": 64,
+    "tooltip": false
+  },
+
+  // --- Часы ----------------------------------------------------------------
+  "clock": {
+    "format": "{:%H:%M}",
+    "tooltip-format": "<tt>{calendar}</tt>",
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "on-scroll": 1,
+      "format": {
+        "months": "<span color='#59c2ff'><b>{}</b></span>",
+        "days": "<span color='#bfbdb6'>{}</span>",
+        "weekdays": "<span color='#8a9199'><b>{}</b></span>",
+        "today": "<span color='#0a0e14' background='#59c2ff'><b>{}</b></span>"
+      }
+    }
+  },
+
+  // --- Системный лоток -----------------------------------------------------
+  "tray": {
+    "icon-size": 15,
+    "spacing": 8
+  },
+
+  // --- Медиаплеер ----------------------------------------------------------
+  "mpris": {
+    "format": "{player_icon} {title}",
+    "format-paused": "{status_icon} {title}",
+    "format-stopped": "",
+    "player-icons": {
+      "default": "",
+      "spotify": "",
+      "firefox": ""
+    },
+    "status-icons": {
+      "paused": ""
+    },
+    "max-length": 44,
+    "tooltip-format": "{player} · {artist} — {title}"
+  },
+
+  // --- Сеть ----------------------------------------------------------------
+  "network": {
+    "format-wifi": " {signalStrength}%",
+    "format-ethernet": " {ipaddr}",
+    "format-disconnected": " offline",
+    "format-linked": " ",
+    "tooltip-format-wifi": "{essid} · {signalStrength}% · {ipaddr}",
+    "tooltip-format-ethernet": "{ifname} · {ipaddr}",
+    "tooltip-format-disconnected": "Нет подключения",
+    "on-click": "alacritty -e nmtui"
+  },
+
+  // --- Звук ----------------------------------------------------------------
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": " mute",
+    "format-icons": {
+      "headphone": "",
+      "headset": "",
+      "default": ["", "", ""]
+    },
+    "scroll-step": 5,
+    "tooltip-format": "{desc} · {volume}%",
+    "on-click": "pavucontrol"
+  },
+
+  // --- Нагрузка ------------------------------------------------------------
+  "cpu": {
+    "format": " {usage}%",
+    "interval": 3,
+    "tooltip": false,
+    "on-click": "alacritty -e btop"
+  },
+
+  "memory": {
+    "format": " {percentage}%",
+    "interval": 5,
+    "tooltip-format": "RAM: {used} / {total}",
+    "on-click": "alacritty -e btop"
+  },
+
+  // --- Питание -------------------------------------------------------------
+  "custom/power": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "~/.local/bin/power-menu.sh"
+  }
+}

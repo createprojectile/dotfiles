@@ -1,0 +1,191 @@
+/* ==========================================================================
+   Waybar · Ayu Dark
+   Палитра:
+     bg      #0a0e14   surface #11151c   border  #1f2630
+     fg      #bfbdb6   dim     #8a9199   muted   #565b66
+     blue    #59c2ff   cyan    #95e6cb   green   #aad94c
+     orange  #ffb454   yellow  #e6b450   red     #f07178
+     magenta #d2a6ff
+   ========================================================================== */
+
+@define-color ayu_bg      #0a0e14;
+@define-color ayu_surface #11151c;
+@define-color ayu_hover   #151b26;
+@define-color ayu_border  #1f2630;
+@define-color ayu_fg      #bfbdb6;
+@define-color ayu_dim     #8a9199;
+@define-color ayu_muted   #565b66;
+@define-color ayu_blue    #59c2ff;
+@define-color ayu_cyan    #95e6cb;
+@define-color ayu_green   #aad94c;
+@define-color ayu_orange  #ffb454;
+@define-color ayu_red     #f07178;
+@define-color ayu_magenta #d2a6ff;
+
+* {
+  font-family: "JetBrainsMono Nerd Font", "Inter", monospace;
+  font-size: 12px;
+  min-height: 0;
+  border: none;
+  border-radius: 0;
+}
+
+window#waybar {
+  background-color: @ayu_bg;
+  color: @ayu_fg;
+  border-bottom: 1px solid @ayu_border;
+}
+
+tooltip {
+  background: @ayu_surface;
+  border: 1px solid @ayu_border;
+  border-radius: 8px;
+  padding: 2px;
+}
+
+tooltip label {
+  color: @ayu_fg;
+  padding: 6px 8px;
+}
+
+/* --- Лаунчер -------------------------------------------------------------- */
+
+#custom-launcher {
+  color: @ayu_blue;
+  font-size: 15px;
+  padding: 0 12px 0 14px;
+  margin: 0;
+}
+
+#custom-launcher:hover {
+  color: @ayu_bg;
+  background-color: @ayu_blue;
+}
+
+/* --- Рабочие пространства ------------------------------------------------- */
+
+#workspaces {
+  margin-left: 2px;
+}
+
+#workspaces button {
+  color: @ayu_muted;
+  background: transparent;
+  padding: 0 9px;
+  margin: 4px 1px;
+  min-width: 10px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+#workspaces button:hover {
+  color: @ayu_fg;
+  background-color: @ayu_hover;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+#workspaces button.empty {
+  color: #2b3441;
+}
+
+#workspaces button.active {
+  color: @ayu_bg;
+  background-color: @ayu_blue;
+  font-weight: 700;
+}
+
+#workspaces button.empty.active {
+  color: @ayu_bg;
+  background-color: @ayu_blue;
+}
+
+#workspaces button.urgent {
+  color: @ayu_bg;
+  background-color: @ayu_red;
+}
+
+/* --- Заголовок окна ------------------------------------------------------- */
+
+#window {
+  color: @ayu_dim;
+  font-size: 12px;
+  padding: 0 4px 0 14px;
+  background: transparent;
+}
+
+window#waybar.empty #window {
+  background: transparent;
+}
+
+/* --- Часы ----------------------------------------------------------------- */
+
+#clock {
+  color: @ayu_fg;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  padding: 0 12px;
+}
+
+/* --- Правый блок ---------------------------------------------------------- */
+
+#tray {
+  padding: 0 10px;
+  margin-right: 2px;
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+  background: transparent;
+}
+
+#mpris {
+  color: @ayu_magenta;
+  padding: 0 10px;
+}
+
+#network,
+#pulseaudio,
+#cpu,
+#memory {
+  color: @ayu_dim;
+  padding: 0 9px;
+}
+
+#network:hover,
+#pulseaudio:hover,
+#cpu:hover,
+#memory:hover {
+  color: @ayu_blue;
+  background-color: @ayu_hover;
+}
+
+#network.disconnected {
+  color: @ayu_red;
+}
+
+#pulseaudio.muted {
+  color: @ayu_muted;
+}
+
+#cpu,
+#memory {
+  font-size: 11px;
+  color: @ayu_muted;
+}
+
+#custom-power {
+  color: @ayu_red;
+  font-size: 14px;
+  padding: 0 14px 0 10px;
+}
+
+#custom-power:hover {
+  color: @ayu_bg;
+  background-color: @ayu_red;
+}
